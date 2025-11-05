@@ -35,21 +35,7 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 const app = express();
 const port = process.env.PORT || 3000;
 
-// ✅ Secure CORS settings
-// const corsOptions = {
-//   origin: [
-//     "https://diprwebapp.gully2global.in",
-//     "https://dipradmin.gully2global.in",
-//     "https://dipr.vercel.app",
-    
-//     "http://localhost:5173",
-//     "http://localhost:5174",
-//     "https://frontend-digi9.vercel.app",
-//     "http://164.164.198.29:8192",
-//     "https://diprkarnataka.duckdns.org"
-//   ],
-//   credentials: true,
-// };
+
 
 const allowedOrigins = [
   "http://localhost:5173",

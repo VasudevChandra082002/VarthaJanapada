@@ -1,28 +1,4 @@
-// const Photos = require("../models/photosModel");
-// const mongoose = require("mongoose");
-// const User = require("../models/userModel");
 
-// const createPhotos = async (req, res) => {
-//   const { photoImage } = req.body;
-//   const user = req.user;
-//   try {
-//     const photos = new Photos({
-//       photoImage,
-//       createdBy: user.id,
-//       status: req.user.role === "admin" ? "approved" : "pending",
-//     });
-//     await photos.save();
-//     res
-//       .status(201)
-//       .json({
-//         success: true,
-//         message: "Photos created",
-//         data: photos,
-//       });
-//   } catch (error) {
-//     res.status(400).json({ message: error.message });
-//   }
-// };
 
 const Photos = require("../models/photosModel");
 const mongoose = require("mongoose");

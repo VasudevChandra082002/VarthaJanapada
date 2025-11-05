@@ -3,17 +3,7 @@ const Category = require("../models/categoryModel");
 const Tags = require("../models/tagsModel");
 const { Translate } = require("@google-cloud/translate").v2;
 
-// const base64Key = process.env.GOOGLE_CLOUD_KEY_BASE64;
-// if (!base64Key) {
-//   throw new Error(
-//     "GOOGLE_CLOUD_KEY_BASE64 is not set in environment variables"
-//   );
-// }
-// const credentials = JSON.parse(
-//   Buffer.from(base64Key, "base64").toString("utf-8")
-// );
 
-// const translate = new Translate({ credentials });
 
 exports.createCategory = async (req, res) => {
   try {
@@ -21,23 +11,9 @@ exports.createCategory = async (req, res) => {
     const { name, description } = req.body;
     const user = req.user;
 
-    // Define the target languages for translation
-    // const targetLanguages = ["en", "kn", "hi"]; // English, Kannada, Hindi
-
-    // // Translate the category name into multiple languages
-    // const translationPromises = targetLanguages.map((lang) =>
-    //   translate.translate(name, lang)
-    // );
-
-    // // Wait for all translations to complete
-    // const translations = await Promise.all(translationPromises);
-
-    // Map the translated names to respective fields
     const category = new Category({
       ...req.body,
-      // english: translations[0][0],
-      // kannada: translations[1][0], 
-      // hindi: translations[2][0], 
+   
       createdBy: user.id,
       name,
       description,
